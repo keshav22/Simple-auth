@@ -39,8 +39,7 @@ This database supports authentication, role management, and audit logging.
 | `created_at` | `timestamp` | Time of user creation (default: `now()`) |
 
 **Notes:**
-- Blocked users (`status = 'blocked'`) are prevented from logging in.
-- Only admins can view and manage all users.
+- From supabase portal add 2 users one with admin access and one without.
 
 ---
 
@@ -49,13 +48,12 @@ This database supports authentication, role management, and audit logging.
 | Column | Type | Description |
 |---------|------|-------------|
 | `id` | `int8` | Primary key, unique project ID |
-| `name` | `varchar` | |
-| `owner_id` | `int8` | |
+| `name` | `varchar` | Name of the project |
+| `owner_id` | `int8` | user id |
 | `created_at` | `timestamp` | Time of project creation (default: `now()`) |
 
 **Notes:**
-- Regular users can only view their own projects.
-- Admins can view all projects.
+- From supabase portal add 2-3 projects linking to both the users added above.
 
 ---
 
@@ -64,10 +62,13 @@ This database supports authentication, role management, and audit logging.
 | Column | Type | Description |
 |---------|------|-------------|
 | `id` | `int8` | Primary key, unique task ID |
-| `project_id` | `int8` |  |
-| `title` | `varchar` | |
+| `project_id` | `int8` | project id  |
+| `title` | `varchar` | Name of the task |
 | `status` | `varchar` | `'new'`, `'in_progress'`, `'done'` |
 | `created_at` | `timestamp` | Time of task creation (default: `now()`) |
+
+**Notes:**
+- From supabase portal add 2-3 taks linking to different projects added above
 
 ---
 
